@@ -1,0 +1,150 @@
+.dify-modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+.dify-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 2001;
+}
+.dify-modal {
+  position: relative;
+  background: #181c27;
+  border-radius: 1rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  max-width: 420px;
+  width: 100%;
+  z-index: 2002;
+  padding: 0;
+  animation: modalFadeIn 0.2s;
+}
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.dify-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 1.5rem 1rem 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.dify-modal-header h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #34d399;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.dify-help {
+  font-size: 1rem;
+  color: #a1a1aa;
+  cursor: pointer;
+  margin-left: 0.25rem;
+}
+.dify-close {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  transition: background 0.2s;
+}
+.dify-close:hover {
+  background: rgba(255,255,255,0.08);
+}
+.dify-modal-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.dify-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.dify-field-group label {
+  color: #f3f4f6;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+.dify-field-group input[type="text"] {
+  background: #23273a;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.dify-field-group input[type="text"]:focus {
+  border-color: #34d399;
+}
+.dify-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+}
+.dify-radio-group label {
+  color: #f3f4f6;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+.dify-radio-group > div {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.25rem;
+}
+.dify-radio-group input[type="radio"] {
+  accent-color: #34d399;
+  margin-right: 0.25rem;
+}
+.dify-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.dify-cancel {
+  background: #a1a1aa;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.dify-cancel:hover {
+  background: #71717a;
+}
+.dify-confirm {
+  background: #10b981;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.dify-confirm:hover {
+  background: #059669;
+}

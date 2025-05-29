@@ -1,0 +1,589 @@
+/* Estiliza o cabeçalho fixado no topo */
+.header {
+  position: fixed; /* Fixa a posição no topo da página */
+  width: 100%; /* Ocupa toda a largura da tela */
+  background-color: rgba(17, 24, 39, 0.95); /* Cor de fundo com leve transparência */
+  backdrop-filter: blur(6px); /* Aplica um desfoque no fundo atrás do header */
+  border-bottom: 1px solid rgba(31, 41, 55, 0.8); /* Linha inferior com leve transparência */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil abaixo do header */
+  z-index: 50; /* Garante que fique acima de outros elementos */
+}
+
+/* Container interno do header */
+.header-container {
+  max-width: 1200px; /* Largura máxima do container */
+  margin: 0 auto; /* Centraliza horizontalmente */
+  padding: 0 1rem; /* Espaçamento lateral interno */
+  display: flex; /* Usa flexbox para alinhar filhos */
+  align-items: center; /* Alinha verticalmente os itens */
+  justify-content: space-between; /* Espaça os itens nas extremidades */
+  height: 4rem; /* Altura do cabeçalho */
+}
+
+/* Alinha os itens da parte esquerda do header */
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+/* Estiliza a logo */
+.logo {
+  color: #00FF99; /* Cor verde neon */
+  font-size: 1.75rem; /* Tamanho grande */
+  font-weight: 800; /* Negrito intenso */
+  letter-spacing: 0.05em; /* Espaçamento entre letras */
+  transition: color 0.3s; /* Transição suave ao mudar cor */
+}
+
+/* Efeito hover da logo */
+.logo:hover {
+  color: #34d399; /* Verde mais suave ao passar o mouse */
+}
+
+/* Estiliza o contador de conexões */
+.connection-counter {
+  margin-left: 1rem; /* Espaço à esquerda */
+  padding: 0.25rem 0.75rem; /* Espaçamento interno */
+  background-color: rgba(31, 41, 55, 0.8); /* Fundo escuro com transparência */
+  border-radius: 9999px; /* Totalmente arredondado (pill shape) */
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3); /* Sombra interna leve */
+}
+
+/* Texto do contador de conexões */
+.connection-counter span {
+  color: rgba(156, 163, 175, 1); /* Cor de texto acinzentada */
+  font-size: 0.875rem; /* Tamanho de texto pequeno */
+}
+
+/* Parte direita do header */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* Espaço entre elementos */
+}
+
+/* Agrupamento das ações do header */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Wrapper do botão de notificação */
+.notification-wrapper {
+  position: relative; /* Necessário para posicionar o badge */
+  margin-left: 0.5rem; /* Espaço à esquerda */
+}
+
+/* Estilos gerais para ícones */
+.icon {
+  font-size: 1rem; /* Tamanho padrão */
+  transition: color 0.2s ease; /* Transição suave de cor */
+}
+
+/* Ícones dentro dos botões do header e de notificação */
+.header-button:hover .icon,
+.notification-button:hover .icon {
+  color: rgba(31, 41, 55, 0.8) /* Cor clara */
+}
+
+/* Cor dos ícones ao passar o mouse */
+.header-button:hover .icon,
+.notification-button:hover .icon {
+  color: rgba(31, 41, 55, 0.8) /* Verde neon */
+}
+
+/* Botão padrão do header */
+.header-button {
+  color: rgba(209, 213, 219, 1); /* Cor do texto */
+  transition: color 0.2s ease, transform 0.2s ease; /* Transições suaves */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer; /* Muda o cursor ao passar o mouse */
+}
+
+/* Efeito hover do botão do header */
+.header-button:hover {
+  color: #00FF99; /* Muda cor para verde neon */
+  transform: translateY(-1px); /* Move levemente para cima */
+}
+
+/* Botão de seleção de idioma */
+.language-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.75rem;
+  background-color: rgba(31, 41, 55, 0.8); /* Fundo escuro */
+  border-radius: 0.5rem; /* Bordas arredondadas */
+  color: rgba(209, 213, 219, 1); /* Cor do texto */
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Hover do botão de idioma */
+.language-button:hover {
+  background-color: rgba(55, 65, 81, 0.9); /* Fundo mais escuro */
+  transform: translateY(-1px); /* Sobe levemente */
+}
+
+/* Botão de notificação (ícone do sino) */
+.notification-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  background-color: rgba(31, 41, 55, 0.8); /* Fundo escuro, igual aos demais botões */
+  border: 1px solid rgba(55, 65, 81, 0.8); /* Borda sutil */
+  border-radius: 0.5rem;
+  color: rgba(209, 213, 219, 1);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Hover do botão de notificação */
+.notification-button:hover {
+  background-color: rgba(55, 65, 81, 0.9); /* Fundo mais escuro no hover */
+  transform: translateY(-1px);
+  color: #00FF99; /* Verde neon ao passar o mouse */
+}
+
+/* Badge (bolinha) de notificação */
+.notification-badge {
+  position: absolute; /* Posicionamento relativo ao botão */
+  top: -0.25rem; /* Levemente acima */
+  right: -0.25rem; /* Levemente à direita */
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #00FF99; /* Cor verde */
+  border-radius: 9999px; /* Arredondamento total (círculo) */
+  box-shadow: 0 0 4px #00FF99; /* Sombra brilhante */
+}
+
+/* Área do perfil do usuário */
+.profile {
+  position: relative; /* Importante para posicionar o dropdown */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Imagem do perfil */
+.profile-image {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 9999px; /* Círculo */
+  border: 2px solid rgba(0, 255, 153, 0.5); /* Borda verde com transparência */
+  transition: transform 0.2s ease;
+}
+
+/* Hover na imagem de perfil */
+.profile-image:hover {
+  transform: scale(1.1); /* Aumenta levemente a imagem */
+}
+
+/* Ícones dentro da área do perfil */
+.profile i {
+  color: rgba(156, 163, 175, 1);
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
+}
+
+/* Hover no ícone do perfil */
+.profile i:hover {
+  color: #00FF99;
+}
+
+/* Contêiner do seletor de idioma */
+.language-selector {
+  position: relative;
+}
+
+/* Dropdown (caixa suspensa) de idiomas */
+.language-dropdown {
+  position: absolute;
+  top: 2.5rem;
+  right: 0;
+  background-color: rgba(31, 41, 55, 0.95);
+  border: 1px solid rgba(55, 65, 81, 0.8);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  padding: 0.5rem 0;
+  z-index: 10;
+  min-width: 200px;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: none;
+  border: none;
+  color: rgba(209, 213, 219, 1);
+  text-align: left;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(55, 65, 81, 0.8);
+  color: #00FF99;
+}
+
+.language-flag {
+  font-size: 1.25rem;
+  line-height: 1;
+  min-width: 1.5rem;
+  text-align: center;
+}
+
+.language-label {
+  flex: 1;
+}
+
+/* Language button styles */
+.language-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background-color: rgba(31, 41, 55, 0.8);
+  border-radius: 0.5rem;
+  color: rgba(209, 213, 219, 1);
+  transition: all 0.2s ease;
+}
+
+.language-button:hover {
+  background-color: rgba(55, 65, 81, 0.9);
+  transform: translateY(-1px);
+}
+
+.language-button span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Animação de fade in */
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Começa invisível */
+    transform: translateY(-4px); /* Levemente acima */
+  }
+  to {
+    opacity: 1; /* Fica visível */
+    transform: translateY(0); /* Volta à posição normal */
+  }
+}
+
+/* Ajuste para ícones do Font Awesome */
+.icon {
+  font-size: 1rem;
+  margin-right: 0.5rem; /* Espaçamento à direita para separar do texto */
+}
+
+/* Remove o espaçamento lateral quando o ícone está no botão de notificação */
+.notification-button .icon {
+  margin-right: 0;
+}
+
+/* Profile Dropdown */
+.profile-dropdown {
+  position: absolute;
+  top: 4rem;
+  right: 1rem;
+  width: 20rem;
+  background-color: rgba(31, 41, 55, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(55, 65, 81, 0.8);
+  border-radius: 0.75rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+  z-index: 50;
+  transform: translateY(0);
+  transition: all 0.3s ease-out;
+}
+
+/* Seção do usuário */
+.user-info {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(55, 65, 81, 0.8);
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.profile-avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+}
+
+.profile-username {
+  color: white;
+  font-weight: 500;
+  margin: 0;
+}
+
+.profile-email {
+  color: rgba(156, 163, 175, 1);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+/* Informações do plano */
+.plan-info {
+  background-color: rgba(31, 41, 55, 0.5);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.plan-badge {
+  color: #00FF99;
+  font-size: 0.875rem;
+}
+
+.plan-progress {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.progress-bar {
+  height: 0.375rem;
+  width: 100%;
+  background-color: rgba(55, 65, 81, 1);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 75%;
+  background-color: #00FF99;
+  border-radius: 9999px;
+}
+
+.progress-text {
+  color: rgba(156, 163, 175, 1);
+  font-size: 0.75rem;
+}
+
+/* Itens do menu */
+.menu-items {
+  padding: 0.5rem;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 0.75rem;
+  border-radius: 0.5rem;
+  color: rgba(209, 213, 219, 1);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.menu-item:hover {
+  background-color: rgba(55, 65, 81, 0.5);
+  color: white;
+}
+
+.menu-item span {
+  font-size: 0.875rem;
+}
+
+.menu-icon {
+  color: rgba(156, 163, 175, 1);
+  width: 1rem;
+}
+
+.menu-item:hover .menu-icon {
+  color: #00FF99;
+}
+
+/* Menu divider */
+.menu-divider {
+  height: 1px;
+  background-color: rgba(55, 65, 81, 0.8);
+  margin: 0.5rem 0;
+}
+
+/* Logout button */
+.logout-button {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+.logout-button:hover .menu-icon,
+.logout-button:hover span {
+  color: #ef4444;
+}
+
+/* Rodapé do menu */
+.menu-footer {
+  padding: 0.5rem;
+}
+
+.logout-button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.625rem 0.75rem;
+  border-radius: 0.5rem;
+  color: rgba(209, 213, 219, 1);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.logout-button:hover {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: rgba(239, 68, 68, 1);
+}
+
+.logout-icon {
+  width: 1rem;
+}
+
+/* Modal de Logout */
+.logout-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.logout-modal {
+  background-color: rgba(31, 41, 55, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(55, 65, 81, 0.8);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content {
+  text-align: center;
+}
+
+.warning-icon {
+  font-size: 3rem;
+  color: #f59e0b;
+  margin-bottom: 1rem;
+}
+
+.modal-content h2 {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.modal-content p {
+  color: #9CA3AF;
+  margin-bottom: 1.5rem;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.cancel-button {
+  padding: 0.5rem 1.5rem;
+  background-color: rgba(55, 65, 81, 0.5);
+  color: white;
+  border: 1px solid rgba(75, 85, 99, 0.8);
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.cancel-button:hover {
+  background-color: rgba(75, 85, 99, 0.7);
+}
+
+.confirm-button {
+  padding: 0.5rem 1.5rem;
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.confirm-button:hover {
+  background-color: #dc2626;
+}
+
+.confirm-button:disabled {
+  background-color: #9CA3AF;
+  cursor: not-allowed;
+}
+
+/* Tela de carregamento do logout */
+.logout-loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(31, 41, 55, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.logout-loading-screen p {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.profile-chevron {
+  color: #9CA3AF;
+  font-size: 0.75rem;
+  transition: transform 0.2s;
+}
+
+.profile:hover .profile-chevron {
+  color: #FFFFFF;
+}
+
+/* Quando o dropdown estiver aberto */
+.profile[data-open="true"] .profile-chevron {
+  transform: rotate(180deg);
+}

@@ -1,0 +1,134 @@
+.container {
+  width: 100%;
+  margin-top: 2rem;
+  --primary-color: #00FF99; /* Adicione esta linha para definir a cor primária */
+}
+
+.actionBar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.filterButtons {
+  display: flex;
+  gap: 1rem;
+}
+
+.actionButton {
+  padding: 0.5rem 1rem;
+  background-color: rgba(31, 41, 55, 0.8);
+  color: rgba(209, 213, 219, 1);
+  border-radius: 0.5rem;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.actionButton:hover {
+  background-color: rgba(55, 65, 81, 0.8);
+}
+
+/* CORREÇÃO PRINCIPAL: Use a mesma classe que no JSX */
+.novaConexaoButton {
+  padding: 0.5rem 1.5rem;
+  background-color: var(--primary-color); /* Agora a variável está definida */
+  color: rgba(17, 24, 39, 1);
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+  box-shadow: 0 4px 6px -1px rgba(0, 255, 153, 0.1), 
+              0 2px 4px -1px rgba(0, 255, 153, 0.06);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.novaConexaoButton:hover {
+  background-color: rgba(0, 255, 153, 0.9);
+  transform: translateY(-1px);
+}
+
+/* Restante do seu CSS permanece igual */
+.tableWrapper {
+  background-color: rgba(31, 41, 55, 0.5);
+  border-radius: 0.75rem;
+  border: 1px solid rgba(55, 65, 81, 0.8);
+  overflow: hidden;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table thead tr {
+  background-color: rgba(31, 41, 55, 0.8);
+}
+
+.table th {
+  padding: 1rem 1.5rem;
+  text-align: left;
+  color: rgba(156, 163, 175, 1);
+  font-weight: 500;
+}
+
+.table tbody tr {
+  border-top: 1px solid rgba(55, 65, 81, 0.8);
+  transition: background-color 0.2s;
+}
+
+.table tbody tr:hover {
+  background-color: rgba(31, 41, 55, 0.3);
+}
+
+.table td {
+  padding: 1rem 1.5rem;
+  color: rgba(209, 213, 219, 1);
+}
+
+.apiKey {
+  display: flex;
+  align-items: center;
+}
+
+.showApiKey {
+  margin-left: 0.5rem;
+  color: rgba(156, 163, 175, 1);
+  transition: color 0.2s;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.showApiKey:hover {
+  color: var(--primary-color);
+}
+
+.statusCell {
+  display: flex;
+  align-items: center;
+}
+
+.statusDot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  margin-right: 0.5rem;
+}
+
+.actionsButton {
+  color: rgba(156, 163, 175, 1);
+  transition: color 0.2s;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.actionsButton:hover {
+  color: var(--primary-color);
+}

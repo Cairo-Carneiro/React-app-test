@@ -1,0 +1,595 @@
+/* Base styles */
+.modalContainer {
+    font-family: "Inter", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: linear-gradient(135deg, #111827 0%, #000000 100%);
+    position: relative;
+  }
+  
+  .modalBackdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(20px);
+  }
+  
+  /* Modal container */
+  .modal {
+    position: relative;
+    width: 100%;
+    max-width: 42rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* Modal header */
+  .modalHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .headerContent {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .iconContainer {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(239, 68, 68, 0.2);
+    border-radius: 0.5rem;
+  }
+  
+  .errorIcon {
+    color: #ef4444;
+    font-size: 1.25rem;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+  }
+  
+  .closeButton {
+    padding: 0.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+  }
+  
+  .closeButton:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .closeIcon {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.25rem;
+  }
+  
+  /* Modal content */
+  .modalContent {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  /* Error details */
+  .errorDetails {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .errorIconLargeContainer {
+    width: 6rem;
+    height: 6rem;
+    margin: 0 auto;
+    background-color: rgba(239, 68, 68, 0.2);
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .errorIconLarge {
+    color: #ef4444;
+    font-size: 2.5rem;
+  }
+  
+  .errorMessage {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .errorTitle {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+  }
+  
+  .errorDescription {
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+  }
+  
+  /* Error log */
+  .errorLog {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .logHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logTitle {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.875rem;
+  }
+  
+  .copyButton {
+    color: #34d399;
+    font-size: 0.875rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  
+  .copyButton:hover {
+    color: #6ee7b7;
+  }
+  
+  .logContent {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+  }
+  
+  .logText {
+    color: #f87171;
+    font-size: 0.875rem;
+    font-family: monospace;
+  }
+  
+  /* Troubleshooting */
+  .troubleshooting {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .troubleshootingTitle {
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+  }
+  
+  .solutionsList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  .solutionItem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .checkIcon {
+    color: #34d399;
+  }
+  
+  /* Support link */
+  .supportLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+  }
+  
+  .supportButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .supportButton:hover {
+    color: #6ee7b7;
+  }
+  
+  .supportIcon {
+    font-size: 1rem;
+  }
+  
+  /* Modal footer */
+  .modalFooter {
+    padding: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .secondaryButton {
+    flex: 1;
+    padding: 0.75rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    border: none;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .secondaryButton:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .primaryButton {
+    flex: 1;
+    padding: 0.75rem;
+    background-color: rgba(52, 211, 153, 0.8);
+    color: white;
+    font-weight: 500;
+    border: none;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+  }
+  
+  .primaryButton:hover {
+    background-color: rgba(52, 211, 153, 1);
+  }
+  
+  .retryIcon {
+    font-size: 1rem;
+  }
+
+.error-modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 2rem;
+}
+
+.error-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 1999;
+}
+
+.error-modal {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  min-width: 400px;
+  background-color: rgb(17, 24, 39);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  overflow: hidden;
+  animation: slideIn 0.2s ease-out;
+  margin: auto;
+}
+
+/* Modal Header */
+.error-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgb(17, 24, 39);
+}
+
+.error-header-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.error-icon {
+  font-size: 1.75rem;
+  color: #ef4444;
+}
+
+.error-title {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.error-close-button {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.error-close-button:hover {
+  color: white;
+}
+
+.error-close-icon {
+  font-size: 1.25rem;
+}
+
+/* Modal Content */
+.error-modal-content {
+  padding: 2rem;
+  background-color: rgb(17, 24, 39);
+}
+
+.error-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.error-icon-large-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 6rem;
+  height: 6rem;
+  background-color: rgba(239, 68, 68, 0.1);
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+}
+
+.error-icon-large {
+  font-size: 3rem;
+  color: #ef4444;
+}
+
+.error-message {
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.error-message-title {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0 0 1rem 0;
+}
+
+.error-description {
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Error Log */
+.error-log {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.log-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.log-title {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.copy-button {
+  background: none;
+  border: none;
+  color: #3b82f6;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: color 0.2s;
+  padding: 0.5rem 1rem;
+}
+
+.copy-button:hover {
+  color: #60a5fa;
+}
+
+.log-content {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+.log-text {
+  color: #ef4444;
+  font-family: monospace;
+  font-size: 1.1rem;
+  white-space: pre-wrap;
+  margin: 0;
+}
+
+/* Troubleshooting */
+.troubleshooting {
+  margin-bottom: 1.5rem;
+}
+
+.troubleshooting-title {
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin: 0 0 0.75rem 0;
+}
+
+.solutions-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.solution-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.check-icon {
+  color: #10b981;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* Support Link */
+.support-link {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.support-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: color 0.2s;
+  padding: 0.5rem 1rem;
+}
+
+.support-button:hover {
+  color: #60a5fa;
+}
+
+.support-icon {
+  font-size: 1rem;
+}
+
+/* Modal Footer */
+.error-modal-footer {
+  display: flex;
+  justify-content: stretch;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgb(17, 24, 39);
+}
+
+.error-secondary-button,
+.error-primary-button {
+  flex: 1;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 160px;
+}
+
+.error-secondary-button {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.error-secondary-button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.error-primary-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background-color: #10b981;
+  color: white;
+}
+
+.error-primary-button:hover {
+  background-color: #059669;
+}
+
+.retry-icon {
+  font-size: 1.25rem;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

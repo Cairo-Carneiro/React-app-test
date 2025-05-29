@@ -1,0 +1,313 @@
+/* Base Styles */
+* {
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Container Principal */
+  .integrations-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    z-index: 1000;
+  }
+  
+  /* Backdrop */
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 1001;
+  }
+  
+  /* Modal */
+  .integrations-modal {
+    position: relative;
+    width: 90%;
+    max-width: 42rem;
+    background: rgb(17, 24, 39);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    z-index: 1002;
+    animation: modalFadeIn 0.3s ease-out;
+  }
+  
+  @keyframes modalFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Header */
+  .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .header-content h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+  }
+  
+  .close-button {
+    padding: 0.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    background: none;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .close-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .close-button svg {
+    font-size: 1.25rem;
+  }
+  
+  /* Content */
+  .modal-content {
+    padding: 1.5rem;
+  }
+  
+  .integration-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 56rem;
+    margin: 0 auto;
+  }
+  
+  /* Integration Cards */
+  .integration-card {
+    background: rgba(17, 24, 39, 0.6);
+    border: 2px solid;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    transition: transform 0.2s;
+    cursor: pointer;
+  }
+  
+  .integration-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .integration-card.red {
+    border-color: rgba(239, 68, 68, 0.3);
+  }
+  
+  .integration-card.purple {
+    border-color: rgba(139, 92, 246, 0.3);
+  }
+  
+  .integration-card.green {
+    border-color: rgba(16, 185, 129, 0.3);
+  }
+  
+  .integration-card.custom-pink {
+    border-color: rgba(203, 76, 110, 0.3);
+  }
+  
+  .integration-card.blue {
+    border-color: rgba(59, 130, 246, 0.3);
+  }
+  
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+  }
+  
+  .card-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .card-title svg {
+    font-size: 1.5rem;
+  }
+  
+  .card-title.red svg {
+    color: #f472b6;
+  }
+  
+  .card-title.purple svg {
+    color: #a78bfa;
+  }
+  
+  .card-title.green svg {
+    color: #34d399;
+  }
+  
+  .card-title.custom-pink svg {
+    color: #cb4c6e;
+  }
+  
+  .card-title.blue svg {
+    color: #3b82f6;
+  }
+  
+  .card-title span {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .card-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  /* Tooltip */
+  .tooltip-container {
+    position: relative;
+  }
+  
+  .tooltip-button {
+    padding: 0.5rem;
+    color: rgba(255, 255, 255, 0.5);
+    background: none;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .tooltip-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .tooltip-text {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    margin-bottom: 0.5rem;
+    width: 16rem;
+    padding: 0.75rem;
+    background: rgb(17, 24, 39);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    z-index: 1003;
+  }
+  
+  .tooltip-button:hover .tooltip-text {
+    display: block;
+  }
+  
+  /* YouTube Button */
+  .youtube-button {
+    padding: 0.5rem;
+    color: #f472b6;
+    background: none;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .youtube-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Card Description */
+  .card-description {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 1rem;
+  }
+  
+  /* Connect Buttons */
+  .connect-button {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .connect-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .connect-button.red {
+    background-color: rgba(239, 68, 68, 0.2);
+  }
+  
+  .connect-button.purple {
+    background-color: rgba(139, 92, 246, 0.2);
+  }
+  
+  .connect-button.green {
+    background-color: rgba(16, 185, 129, 0.2);
+  }
+  
+  .connect-button.custom-pink {
+    background-color: rgba(203, 76, 110, 0.2);
+  }
+  
+  .connect-button.blue {
+    background-color: #3b82f6;
+    color: #fff;
+    box-shadow: 0 2px 6px 0 rgba(59, 130, 246, 0.15);
+  }
+  
+  .connect-button.blue:hover {
+    background-color: #2563eb;
+  }
+  
+  /* Footer */
+  .modal-footer {
+    padding: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: right;
+  }
+  
+  .finish-button {
+    padding: 0.75rem 1.5rem;
+    background-color: #10b981;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .finish-button:hover {
+    background-color: #059669;
+  }
+  

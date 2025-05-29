@@ -1,0 +1,494 @@
+/* Fontes */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;500;600;700;800;900&display=swap');
+
+/* Reset e Estilos Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background-color: #111827;
+  color: #f3f4f6;
+}
+
+/* Classes utilitárias */
+.highlighted-section {
+  outline: 2px solid #3F20FB;
+  background-color: rgba(63, 32, 251, 0.1);
+}
+
+.edit-button {
+  position: absolute;
+  z-index: 1000;
+}
+
+/* Modal Container */
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 1000;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 1001;
+}
+
+.webhook-config-modal {
+  position: relative;
+  width: 100%;
+  max-width: 672px;
+  background-color: #181c27;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  z-index: 1002;
+  animation: slideIn 0.2s ease-out;
+}
+
+/* Modal Header */
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-header-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.modal-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.instance-name {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.close-button {
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.2s;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.close-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Modal Content */
+.modal-content {
+  padding: 24px;
+}
+
+/* Status Toggle */
+.status-toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding: 16px;
+  background-color: #23273a;
+  border-radius: 12px;
+}
+
+.status-label {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 56px;
+  height: 28px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #4b5563;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 24px;
+  width: 24px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .toggle-slider {
+  background-color: #10b981;
+}
+
+input:checked + .toggle-slider:before {
+  transform: translateX(28px);
+}
+
+/* URL Input */
+.url-input-container {
+  margin-bottom: 24px;
+}
+
+.url-label {
+  display: block;
+  margin-bottom: 8px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.url-input {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: #23273a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 16px;
+  transition: border-color 0.2s;
+}
+
+.url-input:focus {
+  outline: none;
+  border-color: rgba(16, 185, 129, 0.5);
+}
+
+/* Events Section */
+.events-container {
+  margin-bottom: 24px;
+}
+
+.events-label {
+  display: block;
+  margin-bottom: 12px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.events-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.event-tag {
+  padding: 8px 16px;
+  border-radius: 9999px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.event-tag-default {
+  background-color: #23273a;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.event-tag-active {
+  background-color: #10b981;
+  color: white;
+}
+
+/* Webhook per Event Toggle */
+.webhook-toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding: 16px;
+  background-color: #23273a;
+  border-radius: 12px;
+}
+
+.webhook-toggle-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.webhook-toggle-label {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.help-button {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.help-button:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Documentation Link */
+.documentation-link {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.documentation-link a {
+  color: #60a5fa;
+  text-decoration: none;
+}
+
+.documentation-link a:hover {
+  text-decoration: underline;
+}
+
+/* Modal Footer */
+.modal-footer {
+  padding: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.cancel-button {
+  padding: 10px 24px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cancel-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.save-button {
+  padding: 10px 24px;
+  background-color: rgba(16, 185, 129, 0.8);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.save-button:hover {
+  background-color: rgba(16, 185, 129, 1);
+}
+
+/* Enhanced Header */
+.header-icon {
+  font-size: 24px;
+  color: var(--primary-color);
+  margin-right: 16px;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.connection-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+}
+
+.instance-name {
+  color: var(--primary-color);
+}
+
+/* URL Input Error States */
+.url-input-wrapper {
+  position: relative;
+}
+
+.url-input-error {
+  border-color: #ef4444 !important;
+}
+
+.url-error-message {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -24px;
+  color: #ef4444;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Event Tags and Tooltips */
+.event-tag-wrapper {
+  position: relative;
+}
+
+.event-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s;
+  z-index: 1000;
+}
+
+.event-tag-wrapper:hover .event-tooltip {
+  opacity: 1;
+  visibility: visible;
+  bottom: calc(100% + 8px);
+}
+
+.event-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 4px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.9) transparent transparent transparent;
+}
+
+/* Help Button Tooltip */
+.help-tooltip-wrapper {
+  position: relative;
+}
+
+.help-tooltip {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 12px;
+  width: max-content;
+  max-width: 320px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s;
+  z-index: 1000;
+}
+
+.help-tooltip-wrapper:hover .help-tooltip {
+  opacity: 1;
+  visibility: visible;
+  bottom: calc(100% + 8px);
+}
+
+.help-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  right: 12px;
+  border-width: 4px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.9) transparent transparent transparent;
+}
+
+/* Disabled States */
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Transitions */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { 
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Textarea da mensagem de ligação perdida com fundo escuro */
+textarea,
+.missed-call-textarea {
+  background-color: #23273a !important;
+  color: #f3f4f6;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  transition: border-color 0.2s;
+  resize: none;
+}
+
+textarea:focus,
+.missed-call-textarea:focus {
+  outline: none;
+  border-color: #10b981;
+}

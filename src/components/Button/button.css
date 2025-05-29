@@ -1,0 +1,67 @@
+/* src/components/Button/button.css */
+
+/* Base Button Styles */
+.button-base {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+  }
+  
+  /* Button Variants */
+  .button-primary {
+    background-color: #00AA66;
+    color: white;
+  }
+  
+  .button-primary:hover {
+    background-color: #00FF99;
+    box-shadow: 0 0 20px rgba(0, 255, 153, 0.3);
+  }
+  
+  .button-secondary {
+    background-color: white;
+    color: #1F2937;
+  }
+  
+  .button-secondary:hover {
+    background-color: #F3F4F6;
+  }
+  
+  .button-ghost {
+    background-color: transparent;
+    color: #D1D5DB;
+  }
+  
+  .button-ghost:hover {
+    background-color: rgba(55, 65, 81, 0.5);
+    color: white;
+  }
+  
+  /* Button Sizes */
+  .button-md {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .button-lg {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+  }
+  
+  /* Full Width */
+  .button-full-width {
+    width: 100%;
+  }
+  
+  /* Icon Styles */
+  .button-icon {
+    margin-right: 0.5rem;
+    font-size: 1rem;
+  }

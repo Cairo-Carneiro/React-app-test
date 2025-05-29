@@ -1,0 +1,267 @@
+/* qrcode.css */
+/* Container principal - CORRIGIDO */
+.qr-modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow-y: auto; /* Permite rolagem interna */
+  padding: 20px 0; /* Espaço para rolagem */
+}
+
+/* Fundo escuro - CORRIGIDO */
+.qr-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px); /* Único blur na aplicação */
+  z-index: 1001; /* Abaixo do modal */
+}
+
+/* Modal - CORRIGIDO */
+.qr-modal {
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+  background-color: rgba(15, 23, 42, 0.95); /* Fundo mais opaco */
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  animation: fadeIn 0.3s ease-out;
+  z-index: 1002; /* Acima do backdrop */
+  margin: auto; /* Centraliza verticalmente */
+}
+
+/* Cabeçalho */
+.qr-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.qr-header-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.qr-header-icon {
+  color: #00ff99;
+  font-size: 1.5rem;
+}
+
+.qr-modal-header h2 {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.qr-close-button {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 8px;
+  transition: all 0.2s;
+}
+
+.qr-close-button:hover {
+  color: white;
+}
+
+/* Conteúdo - CORRIGIDO */
+.qr-modal-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  position: relative; /* Contexto para elementos filhos */
+}
+
+/* QR Code */
+.qr-code-container {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.qr-code-container img {
+  width: 200px;
+  height: 200px;
+  display: block;
+}
+
+.qr-loader {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-spinner {
+  color: #00ff99;
+  font-size: 2.5rem;
+  animation: spin 1s linear infinite;
+}
+
+.qr-refresh-button {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.qr-refresh-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.qr-refresh-button svg {
+  color: #00ff99;
+  font-size: 1.2rem;
+}
+
+/* Status */
+.qr-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.qr-status > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.qr-status-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #00ff99;
+  animation: pulse 1.5s infinite;
+}
+
+.qr-status-info {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  max-width: 300px;
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+/* Estilo para botão desabilitado */
+.qr-button.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Tooltip de acessibilidade para botões */
+[aria-label] {
+  position: relative;
+}
+
+[aria-label]:hover::after {
+  content: attr(aria-label);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-base-900);
+  color: var(--color-base-100);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 1000;
+}
+
+/* Melhoria para o modal do QR Code */
+.qr-modal-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.qr-instructions strong {
+  color: var(--color-success);
+}
+
+/* Estilos para botões de ação */
+.qr-action-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.qr-error-button {
+  padding: 8px 16px;
+  background-color: rgba(239, 68, 68, 0.8);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.qr-error-button:hover {
+  background-color: rgba(239, 68, 68, 1);
+}
+
+.qr-success-button {
+  padding: 8px 16px;
+  background-color: rgba(16, 185, 129, 0.8);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.qr-success-button:hover {
+  background-color: rgba(16, 185, 129, 1);
+}
+
+/* Mantenha os outros estilos existentes */

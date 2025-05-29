@@ -1,0 +1,148 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+  }
+  
+  .modalContent {
+    background-color: var(--dark-bg, #2d3748);
+    border-radius: 16px;
+    border: 1px solid var(--border-color, #4a5568);
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+  
+  .modalHeader {
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color, #4a5568);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .modalHeader h3 {
+    color: var(--text-light, #e2e8f0);
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 0;
+  }
+  
+  .modalClose {
+    color: var(--text-muted, #a0aec0);
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  
+  .modalClose:hover {
+    color: var(--primary-color, #00FF99);
+  }
+  
+  .sortOptions {
+    padding: 20px;
+  }
+  
+  .sortOption {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border: 1px solid transparent;
+  }
+  
+  .sortOption:hover {
+    background-color: rgba(74, 85, 104, 0.5);
+  }
+  
+  .sortOption.active {
+    background-color: rgba(0, 255, 153, 0.1);
+    border: 1px solid rgba(0, 255, 153, 0.2);
+  }
+  
+  .optionContent {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .optionIcon {
+    font-size: 1rem;
+    color: var(--text-muted, #a0aec0);
+  }
+  
+  .sortOption.active .optionIcon {
+    color: var(--primary-color, #00FF99);
+  }
+  
+  .sortOption span {
+    color: var(--text-light, #e2e8f0);
+    font-size: 0.9375rem;
+  }
+  
+  .sortOption.active span {
+    color: var(--primary-color, #00FF99);
+  }
+  
+  .checkIcon {
+    color: var(--primary-color, #00FF99);
+  }
+  
+  .modalFooter {
+    padding: 20px;
+    border-top: 1px solid var(--border-color, #4a5568);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .resetButton {
+    background: none;
+    border: none;
+    color: var(--text-muted, #a0aec0);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.875rem;
+    transition: color 0.2s;
+  }
+  
+  .resetButton:hover {
+    color: var(--primary-color, #00FF99);
+  }
+  
+  .applyButton {
+    padding: 10px 20px;
+    background-color: var(--primary-color, #00FF99);
+    color: var(--dark-text, #1a202c);
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .applyButton:hover {
+    background-color: var(--primary-hover, #00e68a);
+  }
+  
+  .applyButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }

@@ -1,0 +1,273 @@
+/* Base Styles */
+* {
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Container Principal */
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: linear-gradient(135deg, #111827 0%, #000000 100%);
+    z-index: 1000;
+}
+
+/* Backdrop */
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    z-index: 1000;
+}
+
+/* Modal */
+.modal {
+    position: relative;
+    width: 90%;
+    max-width: 42rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 1rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    z-index: 1001;
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Modal Header, Body e Footer */
+.modal-header,
+.modal-body,
+.modal-footer {
+    padding: 1.5rem;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.modal-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.header-content h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.icon-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.action-label {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Inputs e Textarea */
+.instance-modal .instance-name-input,
+.instance-modal .message-input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.9);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.instance-modal .instance-name-input:focus,
+.instance-modal .message-input:focus {
+    border-color: rgba(52, 211, 153, 0.5);
+    outline: none;
+}
+
+.message-input {
+    min-height: 5rem;
+    resize: none;
+}
+
+.message-input:focus {
+    border-color: rgba(16, 185, 129, 0.5);
+    outline: none;
+}
+
+/* Seções adicionais */
+.instance-name-section,
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 0.75rem;
+}
+
+.instance-name-content,
+.setting-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.settings-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Toggle Switch */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 2.75rem;
+    height: 1.5rem;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: 0.4s;
+    border-radius: 9999px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.25rem;
+    width: 1.25rem;
+    left: 0.125rem;
+    bottom: 0.125rem;
+    background-color: #10b981;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: rgba(16, 185, 129, 0.2);
+}
+
+input:checked + .slider:before {
+    transform: translateX(1.25rem);
+}
+
+.message-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.message-section label {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Botões da Footer */
+.footer-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.action-button {
+    flex: 1;
+    padding: 0.75rem;
+    background-color: rgba(255, 255, 255, 0.08);
+    color: white;
+    font-weight: 500;
+    border: none;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.action-button:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: scale(1.05);
+}
+
+.save-button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: rgba(16, 185, 129, 0.8);
+    color: white;
+    font-weight: 500;
+    border-radius: 0.75rem;
+    transition: all 0.2s, transform 0.2s;
+}
+
+.save-button:hover {
+    background-color: rgba(16, 185, 129, 1);
+    transform: scale(1.05);
+}
