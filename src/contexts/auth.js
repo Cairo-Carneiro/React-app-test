@@ -92,7 +92,7 @@ export const AuthProvider = ({ children }) => {
     <AuthContext.Provider
       value={{
         user,
-        signed: !!user,
+        signed: !!user && !!user.confirmed_at,
         loading,
         error,
         signin,

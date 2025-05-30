@@ -9,7 +9,8 @@ import {
   faEyeSlash,
 } from "@fortawesome/free-solid-svg-icons";
 import { faWhatsapp, faGoogle } from "@fortawesome/free-brands-svg-icons";
-import useAuth from "./hook/useAuth"; // caminho correto para o hook!
+import { toast } from "react-toastify";
+import useAuth from "./hook/useAuth";
 import "./signup.css";
 
 const Signup = () => {
@@ -20,20 +21,25 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
-  const [message, setMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
-    setMessage("");
     setIsLoading(true);
     try {
-      const result = await signup(email, password, name); // envia o nome!
+      const result = await signup(email, password, name);
       if (!result.success) throw new Error(result.message);
-      setMessage("Conta criada com sucesso! Redirecionando...");
-      setTimeout(() => navigate("/"), 2000);
+
+      toast.success(
+        "Conta criada com sucesso! Verifique seu e-mail antes de fazer login.",
+        { position: "top-center", autoClose: 4000 }
+      );
+      setTimeout(() => navigate("/"), 4000);
     } catch (err) {
+      toast.error(err.message || "Erro ao criar conta", {
+        position: "top-center",
+      });
       setError(err.message || "Erro ao criar conta");
     } finally {
       setIsLoading(false);
@@ -131,7 +137,6 @@ const Signup = () => {
               <span className="terms-link">Política de Privacidade</span>.
             </label>
           </div>
-          {message && <div className="success-message">{message}</div>}
           {error && <div className="error-message">{error}</div>}
           <button type="submit" className="signup-button" disabled={isLoading}>
             {isLoading ? "Criando conta..." : "Criar conta"}
