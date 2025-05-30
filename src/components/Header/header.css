@@ -121,10 +121,16 @@
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
+/* Hover para botões do header */
+.header-button:hover {
+  color: #00FF99;
+  transform: translateY(-1px);
+}
+
 /* Hover do botão de idioma */
 .language-button:hover {
-  background-color: rgba(55, 65, 81, 0.9); /* Fundo mais escuro */
-  transform: translateY(-1px); /* Sobe levemente */
+  background-color: rgba(55, 65, 81, 0.9);
+  transform: translateY(-1px);
 }
 
 /* Botão de notificação (ícone do sino) */
@@ -144,9 +150,9 @@
 
 /* Hover do botão de notificação */
 .notification-button:hover {
-  background-color: rgba(55, 65, 81, 0.9); /* Fundo mais escuro no hover */
+  background-color: rgba(55, 65, 81, 0.9);
+  color: #00FF99;
   transform: translateY(-1px);
-  color: #00FF99; /* Verde neon ao passar o mouse */
 }
 
 /* Badge (bolinha) de notificação */
@@ -231,6 +237,7 @@
   transition: all 0.2s ease;
 }
 
+/* Hover dos itens do dropdown de idioma */
 .dropdown-item:hover {
   background-color: rgba(55, 65, 81, 0.8);
   color: #00FF99;
@@ -307,6 +314,87 @@
   z-index: 50;
   transform: translateY(0);
   transition: all 0.3s ease-out;
+}
+
+/* Estilo do menu popup do perfil */
+.profile-pmenu {
+  min-width: 270px;
+  background: #181f2a !important;      /* Fundo azul escuro */
+  border-radius: 1rem !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.35) !important;
+  border: 1px solid #232b3b !important;
+  padding: 0 !important;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+}
+
+.p-menu-header {
+  background: #151a23 !important;      /* Cabeçalho ainda mais escuro */
+  padding: 1.25rem 1.25rem 1rem 1.25rem !important;
+  border-bottom: 1px solid #232b3b !important;
+}
+
+.p-menu-header img {
+  border: 2px solid #00ff99;
+  box-shadow: 0 2px 8px rgba(0,255,153,0.08);
+}
+
+.p-menu-header div[style*="fontWeight: 600"] {
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.p-menu-header div[style*="fontSize: 13"] {
+  color: #9ca3af !important;
+}
+
+.plan-badge {
+  background: #232b3b !important;
+  color: #00ff99 !important;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 8px;
+  margin-top: 4px;
+  display: inline-block;
+}
+
+.p-menu-header span[style*="fontSize: 11"] {
+  color: #00ff99 !important;
+  font-weight: 500;
+}
+
+/* Itens do menu */
+.p-menu .p-menuitem-link {
+  color: #d1d5db !important;
+  padding: 0.85rem 1.25rem !important;
+  border-radius: 0.5rem !important;
+  transition: background 0.2s, color 0.2s;
+  font-size: 0.97rem;
+  background: transparent !important;
+}
+
+/* Hover dos itens do menu de perfil (PrimeReact) */
+.p-menu .p-menuitem-link:hover,
+.p-menu .p-menuitem-link:focus {
+  background: #232b3b !important;
+  color: #00ff99 !important;
+}
+
+.p-menu .p-menuitem.p-menuitem-danger .p-menuitem-link {
+  color: #ef4444 !important;
+}
+
+.p-menu .p-menuitem-separator {
+  margin: 0.25rem 0 !important;
+  border-top: 1px solid #232b3b !important;
+}
+
+/* Ícones do menu */
+.p-menu .pi {
+  font-size: 1.1rem;
+  margin-right: 0.7rem;
+  color: #00ff99 !important;
+  vertical-align: middle;
 }
 
 /* Seção do usuário */
@@ -395,18 +483,10 @@
   transition: all 0.2s;
 }
 
+/* Hover dos itens customizados do menu de perfil */
 .menu-item:hover {
-  background-color: rgba(55, 65, 81, 0.5);
-  color: white;
-}
-
-.menu-item span {
-  font-size: 0.875rem;
-}
-
-.menu-icon {
-  color: rgba(156, 163, 175, 1);
-  width: 1rem;
+  background-color: rgba(55, 65, 81, 0.8);
+  color: #00FF99;
 }
 
 .menu-item:hover .menu-icon {
@@ -429,8 +509,10 @@
   cursor: pointer;
 }
 
+/* Hover do botão de logout */
 .logout-button:hover {
   background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
 }
 
 .logout-button:hover .menu-icon,
@@ -579,9 +661,6 @@
   transition: transform 0.2s;
 }
 
-.profile:hover .profile-chevron {
-  color: #FFFFFF;
-}
 
 /* Quando o dropdown estiver aberto */
 .profile[data-open="true"] .profile-chevron {

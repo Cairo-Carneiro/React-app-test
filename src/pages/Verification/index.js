@@ -10,9 +10,11 @@ import {
   faArrowLeft 
 } from '@fortawesome/free-solid-svg-icons';
 import './verification.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const EmailVerification = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="email-verification-page">
       <div className="verification-container">
@@ -48,12 +50,16 @@ const EmailVerification = () => {
             <p>Não recebeu o e-mail? Verifique sua pasta de spam</p>
           </div>
           
-          <div className="back-to-login">
-            <Link
-              to="/signin"
-              className="signin-link"
-              aria-label="Voltar ao Link"
-            />
+          <div className="back-to-login-container">
+            <button
+              className="back-to-login-button"
+              type="button"
+              onClick={() => navigate('/')}
+
+            >
+              <FontAwesomeIcon icon={faArrowLeft} />
+              Voltar para login
+            </button>
           </div>
         </div>
       </div>

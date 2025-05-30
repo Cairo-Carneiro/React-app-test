@@ -17,7 +17,7 @@ import { Menu } from 'primereact/menu';
 import 'primereact/resources/themes/lara-light-blue/theme.css'; // ou outro tema
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
-import './header.css';
+import './header.css'; // Importando o CSS do Header
 
 
 const languageOptions = {
@@ -46,8 +46,8 @@ const Header = () => {
   const [isLoggingOut, setIsLoggingOut] = useState(false);
 
   const dropdownRef = useRef();
-  const profileRef = useRef();
   const profileMenu = useRef(null);
+  const profileRef = useRef(null);
 
   const profileMenuItems = [
     {
@@ -121,16 +121,21 @@ const Header = () => {
     }
   }, []);
 
+  // Fecha o menu ao clicar fora
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setShowDropdown(false);
+    function handleClickOutside(event) {
+      // Checagem extra para evitar erro
+      if (
+        profileMenu.current &&
+        profileMenu.current.container &&
+        typeof profileMenu.current.hide === 'function' &&
+        !profileMenu.current.container.contains(event.target) &&
+        profileRef.current &&
+        !profileRef.current.contains(event.target)
+      ) {
+        profileMenu.current.hide();
       }
-      if (profileRef.current && !profileRef.current.contains(event.target)) {
-        setShowProfile(false);
-      }
-    };
-
+    }
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
@@ -225,8 +230,9 @@ const Header = () => {
                 </button>
               </div>
 
-              <div 
+              <div
                 className="profile"
+                ref={profileRef}
                 onClick={(e) => profileMenu.current.toggle(e)}
                 style={{ cursor: 'pointer' }}
               >

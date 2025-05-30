@@ -57,12 +57,13 @@ const ForgotPassword = () => {
           <form onSubmit={handleSubmit}>
             <div className="input-group">
               <label>Email</label>
-              <div className="input-wrapper">
+              <div className="input-container-row">
                 <FontAwesomeIcon icon={faEnvelope} className="input-icon" />
                 <input 
                   type="email" 
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  className="input-field"
                   placeholder="seu@email.com"
                   required
                 />

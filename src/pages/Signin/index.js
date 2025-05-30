@@ -22,10 +22,13 @@ const Signin = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [showSignupSuccess, setShowSignupSuccess] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
+    setError('');
+    
     try {
       const result = await signin(email, password);
       if (!result.success) {
@@ -34,6 +37,7 @@ const Signin = () => {
         navigate('/home');
       }
     } catch (err) {
+      console.error('Erro no login:', err);
       setError('Erro durante o login');
     } finally {
       setIsLoading(false);
@@ -42,10 +46,13 @@ const Signin = () => {
 
   const handleGoogleLogin = async () => {
     setIsLoading(true);
+    setError('');
+    
     try {
       await googleSignIn();
       navigate('/home');
     } catch (error) {
+      console.error('Erro no login com Google:', error);
       setError('Erro ao fazer login com Google');
     } finally {
       setIsLoading(false);
@@ -64,9 +71,9 @@ const Signin = () => {
         </div>
 
         <form id="login-form" onSubmit={handleSubmit}>
+          <label className="input-label">Email</label>
           <div className="input-group">
-            <label className="input-label">Email</label>
-            <div className="input-wrapper">
+            <div className="input-container-row">
               <FontAwesomeIcon 
                 icon={faEnvelope} 
                 className="input-icon" 
@@ -81,10 +88,10 @@ const Signin = () => {
               />
             </div>
           </div>
-
+ 
+          <label className="input-label">Senha</label>
           <div className="input-group">
-            <label className="input-label">Senha</label>
-            <div className="input-wrapper">
+            <div className="input-container-row">
               <FontAwesomeIcon 
                 icon={faLock} 
                 className="input-icon" 
@@ -155,6 +162,12 @@ const Signin = () => {
             </div>
           </div>
         </form>
+
+        {showSignupSuccess && (
+          <div className="popup-success">
+            Conta criada com sucesso!
+          </div>
+        )}
       </div>
     </div>
   );

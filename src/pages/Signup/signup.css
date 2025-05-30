@@ -99,17 +99,33 @@
     width: 100%;
   }
   
+  .input-container-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .input-icon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9CA3AF;
+    font-size: 1rem;
+    pointer-events: none;
+    z-index: 2;
+  }
+
   .input-field {
     width: 100%;
-    padding: 10px;
-    padding-right: 40px; /* Adicionando espaço para o ícone dentro do campo */
-    background: rgba(55, 65, 81, 0.5);
-    border: 1px solid #4B5563;
-    border-radius: 0.5rem;
-    padding: 0.75rem 2.5rem;
+    padding: 0.625rem 2.25rem 0.625rem 2.25rem; /* top right bottom left */
+    background: rgba(31, 41, 55, 0.5);
+    border: 1px solid rgba(75, 85, 99, 0.4);
+    border-radius: 0.375rem;
     color: white;
-    font-size: 1rem;
-    transition: all 0.3s ease;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
   }
   
   .input-field:focus {
@@ -118,18 +134,7 @@
     box-shadow: 0 0 0 1px #00FF99;
   }
   
-  .input-icon {
-    position: absolute;
-    left: 0.75rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #9CA3AF;
-    font-size: 1rem;
-  }
-
   .password-wrapper {
-    display: flex;
-    align-items: center;
   }
   
   .password-toggle {
@@ -153,8 +158,18 @@
   }
   .password-toggle-icon {
     position: absolute;
-    right: 10px; /* Posicionando o ícone à direita do campo */
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9CA3AF;
+    font-size: 1rem;
     cursor: pointer;
+    z-index: 2;
+    background: none;
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
   }  
   /* Terms Checkbox */
   .terms-group {
