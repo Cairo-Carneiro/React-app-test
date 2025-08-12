@@ -43,7 +43,7 @@ const ForgotPassword = () => {
         <div className="logo-section">
           <div className="logo-wrapper">
             <FontAwesomeIcon icon={faWhatsapp} className="logo-icon" />
-            <span className="logo-text">Wappfy</span>
+            <span className="logo-text">Whatsbus</span>
           </div>
           <p className="logo-subtitle">API de WhatsApp Profissional</p>
         </div>

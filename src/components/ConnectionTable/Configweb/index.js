@@ -210,7 +210,7 @@ const ConfigWeb = ({ isOpen, onClose, connection }) => {
           {/* Documentation Link */}
           <p className="documentation-link">
             Leia nossa{' '}
-            <a href="https://docs.wappfy.com.br/pt/introducao" target="_blank" rel="noopener noreferrer">
+                            <a href="#" target="_blank" rel="noopener noreferrer">
               documentação
             </a>
             {' '}para mais informações sobre webhooks.

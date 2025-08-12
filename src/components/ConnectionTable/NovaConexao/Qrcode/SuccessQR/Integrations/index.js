@@ -121,7 +121,7 @@ const IntegrationsModal = ({ onClose, instanceName, onWebhookInstance, onDifyIns
                     } else if (integration.id === 'n8n-agents') {
                       window.open('https://n8n.io/?gad_source=1&gad_campaignid=22416154450&gbraid=0AAAAA-uF9WCMOCX33khDMjuCW1HVNJyHT&gclid=CjwKCAjw24vBBhABEiwANFG7yxymzd34hrjPx_mQh7aUa8806vWZjWsHGGMhJirmmfigt9fsT1GNXxoCY3QQAvD_BwE', '_blank');
                     } else if (integration.id === 'highlevel') {
-                      window.open('https://marketplace.leadconnectorhq.com/oauth/chooselocation?response_type=code&redirect_uri=https://dash.wappfy.com.br/leadconnector&client_id=66918be52e5e272f4e962463-m1l81eg5&scope=conversations/message.readonly%20conversations/message.write%20conversations.readonly%20conversations.write%20contacts.readonly%20contacts.write%20opportunities.readonly%20opportunities.write%20users.readonly%20workflows.readonly%20conversations/reports.readonly', '_blank');
+                      window.open('https://marketplace.leadconnectorhq.com/oauth/chooselocation?response_type=code&redirect_uri=https://dash.whatsbus.com.br/leadconnector&client_id=66918be52e5e272f4e962463-m1l81eg5&scope=conversations/message.readonly%20conversations/message.write%20conversations.readonly%20conversations.write%20contacts.readonly%20contacts.write%20opportunities.readonly%20opportunities.write%20users.readonly%20workflows.readonly%20conversations/reports.readonly', '_blank');
                     } else if (integration.id === 'webhooks') {
                       if (typeof onWebhookInstance === 'function') onWebhookInstance();
                     } else if (integration.id === 'dify') {

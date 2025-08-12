@@ -81,19 +81,19 @@ const Header = () => {
       command: () => navigate('/configuracoes')
     },
     {
-      label: 'Se tornar Wappfy Partner',
+      label: 'Se tornar Whatsbus Partner',
       icon: 'pi pi-users',
-      command: () => window.open('https://wappfy.com.br/partner', '_blank')
+      command: () => window.open('#', '_blank')
     },
     {
       label: 'Contato do Suporte',
       icon: 'pi pi-headphones',
-      command: () => window.open('mailto:suporte@wappfy.com.br')
+      command: () => window.open('mailto:suporte@whatsbus.com.br')
     },
     {
       label: 'Outras Soluções',
       icon: 'pi pi-send',
-      command: () => window.open('https://wappfy.com.br/solucoes', '_blank')
+      command: () => window.open('#', '_blank')
     },
     { separator: true },
     {
@@ -174,7 +174,7 @@ const Header = () => {
       <header id="header" className="header">
         <div className="header-container">
           <div className="header-left">
-            <div className="logo">Wappfy</div>
+            <div className="logo">Whatsbus</div>
             <div className="connection-counter">
               <span>3/10 conexões ativas</span>
             </div>
@@ -182,9 +182,7 @@ const Header = () => {
 
           <div className="header-right">
             <a
-              href="https://docs.wappfy.com.br/pt/introducao"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#"
               className="header-button"
             >
               <FaFileAlt className="icon" /> Documentação

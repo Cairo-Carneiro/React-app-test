@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="footer-content">
           <span>v2.0.1</span>
           <span className="separator">•</span>
-          <span>© 2025 Wappfy. Todos os direitos reservados.</span>
+          <span>© 2025 Whatsbus. Todos os direitos reservados.</span>
         </div>
       </div>
     </footer>

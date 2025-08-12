@@ -32,10 +32,10 @@ const Signup = () => {
       if (!result.success) throw new Error(result.message);
 
       toast.success(
-        "Conta criada com sucesso! Verifique seu e-mail antes de fazer login.",
-        { position: "top-center", autoClose: 4000 }
+        "Conta criada com sucesso! Faça login para continuar.",
+        { position: "top-center", autoClose: 3000 }
       );
-      setTimeout(() => navigate("/"), 4000);
+      setTimeout(() => navigate("/"), 3000);
     } catch (err) {
       toast.error(err.message || "Erro ao criar conta", {
         position: "top-center",
@@ -52,14 +52,14 @@ const Signup = () => {
         <div className="logo-section">
           <div className="logo-wrapper">
             <FontAwesomeIcon icon={faWhatsapp} className="logo-icon" />
-            <span className="logo-text">Wappfy</span>
+            <span className="logo-text">Whatsbus</span>
           </div>
           <p className="logo-subtitle">API de WhatsApp Profissional</p>
         </div>
         <div className="signup-header">
           <h2 className="signup-title">Crie sua conta</h2>
           <p className="signup-description">
-            Comece a usar a Wappfy gratuitamente.
+            Comece a usar a Whatsbus gratuitamente.
           </p>
         </div>
         <form onSubmit={handleSubmit} className="signup-form">

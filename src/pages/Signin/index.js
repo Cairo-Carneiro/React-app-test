@@ -34,6 +34,7 @@ const Signin = () => {
       if (!result.success) {
         setError(result.message);
       } else {
+        // Redirecionar para a página principal dos componentes
         navigate('/home');
       }
     } catch (err) {
@@ -65,7 +66,7 @@ const Signin = () => {
         <div id="logo-section">
           <div className="logo-wrapper">
             <FontAwesomeIcon icon={faWhatsapp} className="logo-icon" />
-            <span className="logo-text">Wappfy</span>
+            <span className="logo-text">Whatsbus</span>
           </div>
           <p className="logo-subtitle">API de WhatsApp Profissional</p>
         </div>
