@@ -1,71 +1,50 @@
-# Getting Started with Create React App
+# ⚛️ React Auth System (Wappy2_PPV)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Um sistema completo de autenticação e gerenciamento de rotas construído com **React**, focado em performance, design moderno e usabilidade.
 
-## Available Scripts
+## 🚀 Sobre o Projeto
+Este projeto web implementa um fluxo de autenticação (Signup, Signin) com proteção de rotas públicas e privadas. O sistema foi desenvolvido com uma interface rica e responsiva, utilizando animações suaves e componentes interativos. Atualmente configurado para rodar de forma simplificada com validação local, é perfeito para testes, estudos de fluxo no front-end e pode ser facilmente expandido para um backend real.
 
-In the project directory, you can run:
+## 🛠 Tecnologias Utilizadas
+- **[React 19](https://react.dev/)** - Biblioteca principal para construção da interface estruturada.
+- **[Tailwind CSS](https://tailwindcss.com/) & [Styled-Components](https://styled-components.com/)** - Para estilização ágil, moderna e componentizada.
+- **[Framer Motion](https://www.framer.com/motion/)** - Aplicado para micro-interações e animações fluidas na interface.
+- **[Zustand](https://zustand-demo.pmnd.rs/)** - Gerenciamento global de estado leve, rápido e direto.
+- **[React Router DOM](https://reactrouter.com/)** - Controle completo de roteamento da aplicação.
+- **[PrimeReact](https://primereact.org/)** - Fornecimento de componentes de UI estruturados e acessíveis.
 
-### `npm start`
+## ⚙️ Principais Funcionalidades
+- **Fluxo de Registro (Signup)**: Validações de email, força de senha e verificação de duplicidade.
+- **Fluxo de Login (Signin)**: Autenticação rápida utilizando persistência via `localStorage` simulando uma API.
+- **Proteção de Rotas Inteligente**: Rotas privadas (como `/home` e `/profile`) bloqueadas para acesso anônimo, com redirecionamento automático.
+- **Design Moderno e Responsivo**: Interface construída baseada nas melhores e mais atuais práticas de UX/UI.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🚀 Como Executar Localmente
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**1. Clone o Repositório**
+```bash
+git clone https://github.com/Cairo-Carneiro/React-app-test.git
+cd React-app-test
+```
 
-### `npm test`
+**2. Instale as Dependências**
+Usando npm:
+```bash
+npm install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**3. Inicie o Servidor de Desenvolvimento**
+```bash
+npm start
+```
 
-### `npm run build`
+Após iniciar, acesse [http://localhost:3000](http://localhost:3000) no seu navegador. Comece criando uma conta fictícia na rota `/signup` e, em seguida, utilize essas credenciais na tela inicial de login para visualizar o dashboard.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🤝 Próximos Passos e Melhorias (Produção)
+- [ ] Implementar criptografia de senhas no front/backend.
+- [ ] Integrar a um backend/banco de dados real (ex: Node/PostgreSQL, Firebase, Supabase).
+- [ ] Implementar fluxo de recuperação de senhas por e-mail.
+- [ ] Adoção de JWT e Refresh Tokens para manter a sessão ativa com segurança.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# wappy2_ppv
+---
+✨ Criado para demonstrar um fluxo de autenticação robusto e uma interface premium num ecossistema React.
